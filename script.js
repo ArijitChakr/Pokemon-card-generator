@@ -10,6 +10,10 @@ const generateCard = function () {
 
 const getData = async function () {
   try {
+    CardView.clearEl();
+
+    CardView.renderSpinner();
+
     const data = SearchView.getValue();
     if (!data.num || !data.type) return;
 
