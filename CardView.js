@@ -37,12 +37,21 @@ class CardView {
   }
 
   renderError(message) {
-    const newhtml = `
+    const htmlError = `
         <div class="error">
           <h3>${message}, Please Enter Valid Pokemon type </h3>
         </div>
         `;
-    this._parentEl.insertAdjacentHTML("afterbegin", newhtml);
+    this.clearEl();
+    this._parentEl.insertAdjacentHTML("afterbegin", htmlError);
+  }
+
+  renderSpinner() {
+    const htmlSpinner = `<div class="spinner" style="width: 200px; height: 200px">
+        <div class="loading loading--full-height"></div>
+      </div>`;
+    this.clearEl();
+    this._parentEl.insertAdjacentHTML("afterbegin", htmlSpinner);
   }
 }
 export default new CardView();
